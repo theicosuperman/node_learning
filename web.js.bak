@@ -35,8 +35,9 @@ function start() {
 		response.writeHead(200,{"Content-Type":"text/html"});
 		try {
 			var content = fs.readFileSync('head.html');
-
+			content += '<div';
 			content += fs.readFileSync('file.txt');
+			content += '</div>';
 			content += fs.readFileSync('foot.html');
 			response.write(content);
 		} catch (e) {
